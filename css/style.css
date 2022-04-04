@@ -1,0 +1,175 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    background-color: #EFEDE0;
+}
+
+/* custom navbar */
+nav{
+    background-color: #0E91A1;
+}
+
+/* custom navbar link */
+nav a{
+    color: white !important;
+}
+
+/* custom link login admin */
+.admin{
+    font-style: normal;
+    font-size: 18px;
+    line-height: 28px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+}
+
+/* custom text header content*/
+.header{
+    color: #146C78;
+    font-style: normal;
+    font-weight: 700;
+}
+
+/* custom button */
+.btn{
+    width: 100px;
+    height: 50px;
+    background: #7DCE94;
+    border-radius: 8px;
+    font-size: 20px;
+}
+
+/* custom tag p */
+.p{
+    font-size: 14pt;
+    text-align: justify;
+
+}
+
+/* custom footer */
+footer{
+    background: #146C78;
+    color: white;
+    text-align: center;
+    padding: 3px;
+}
+
+/* custom tag p footer */
+footer p{
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* custom container */
+.container{
+    margin-top: 6px;
+    margin-bottom: 5px;
+}
+
+/* custom modal */
+.modal-header{
+    border-bottom: none !important;
+}
+
+.modal-title{
+    margin-bottom: 10px;
+    color: #0E91A1;
+}
+
+.modal-body{
+    padding-top: 0px;
+}
+
+.modal-content{
+    background-color: #EFEDE0;
+}
+
+.modal-sm{
+    max-width: 400px;
+}
+
+.img-modal{
+    width: 100px;
+}
+
+/* custom side-navbar */
+.side-navbar{
+    width:220px;
+    height:100%;
+    position:fixed;
+    margin-left:-300px;
+    background-color:#0E91A1;
+    transition:.5s
+}
+
+.my-container{
+    transition:.4s;
+}
+
+.active-nav{
+    margin-left:0;
+}
+
+.active-cont{
+    margin-left:220px;
+}
+
+#menu-btn{
+    background-color:transparent;
+    color: white;
+    margin-left:-30px !important;
+}
+
+.img-sidebar{
+    width: 100px;
+    margin-top: 10px;
+}
+
+.side-navbar a{
+    color: white !important;
+    text-decoration: none;
+}
+
+.bg{
+    background-color: #146C78;
+}
+
+/* custom icon */
+.fa-solid, .fas{
+    font-size: 28pt !important;
+}
+
+/* button ubah data */
+.btn-ubah{
+    width: 120px !important;
+}
+
+/* button tambah data */
+.btn-tambah{
+    width: 145px !important;
+}
+
+/* button hapus data */
+.btn-hapus{
+    width: 130px !important;
+}
+
+/* link aksi */
+.badge{
+    text-decoration: none;
+    color: #fff !important;
+}
+
+.kuesioner{
+    color:#146C78 !important; 
+    font-weight:500 !important;
+    font-size: large;
+}
+
+.hasil{
+    font-size: 18pt !important;
+}
