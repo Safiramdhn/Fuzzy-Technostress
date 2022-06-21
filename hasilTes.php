@@ -24,7 +24,9 @@
         // calling sidebar
         include 'sidebar.php';
         $hasil->show($id);
-        // $row = $data->fetch(PDO::FETCH_ASSOC);
+        if (isset($_GET['action']) && $_GET['action'] == 'hapusData') {
+            $hasil->delete($id);
+        }
     ?>
 
     <!-- Main Wrapper -->
@@ -39,24 +41,43 @@
         <!-- Content -->
         <div class="container mt-2 mb-5">
             <div class="text-center">
-                <h2 class="header">Hasil Tes</h2>
+                <h2 class="header mt-2 mt-5">Total Penilaian Kuesioner</h2>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Overload</th>
+                            <th scope="col">Invasion</th>
+                            <th scope="col">Complexity</th>
+                            <th scope="col">Uncertainty</th>
+                            <th scope="col">Insecurity</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <tr>
+                            <td><?php echo $hasil->over; ?></td>
+                            <td><?php echo $hasil->inva; ?></td>
+                            <td><?php echo $hasil->com; ?></td>
+                            <td><?php echo $hasil->un; ?></td>
+                            <td><?php echo $hasil->in; ?></td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
 
         <div class="container mt-2 mb-5">
+            <div class="text-center">
+                <h2 class="header mt-2 mt-5">Hasil Akhir Tes</h2>
+            </div>
             <div class="p-2">
                 <h1>Tingkat</h1>
                 <p style="font-size:16pt"><?php echo $hasil->tingkat;?></p>
             </div>
-
+            
             <div class="p-2">
-                <h1>Kriteria</h1>
-                <p style="font-size:16pt"><?php echo $hasil->nama;?></p>
-            </div>
-
-            <div class="p-2">
-                <h1>Keterangan</h1>
-                <p style="font-size:16pt"><?php echo $hasil->ket;?></p>
+                <h1>Nilai akhir</h1>
+                <p style="font-size:16pt"><?php echo $hasil->angka;?></p>
             </div>
 
             <div class="p-2">
@@ -74,10 +95,6 @@
                             Jika merasa tidak mengalami perubahan, bisa melakukan konsultasi dengan pakar.";
                     }
                 ?>
-                    <!-- Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-                    Porro officia cum cumque. 
-                    Molestias corrupti illo temporibus vel enim ipsa nihil, 
-                    cupiditate hic provident possimus sed dicta repellendus autem perferendis totam. -->
                 </p>
             </div>
         </div>  
@@ -94,6 +111,28 @@
                     <button type="button" class="btn btn-light btn-hapus" data-bs-toggle="modal" data-bs-target="#delete">
                         Hapus Data
                     </button>
+                    <!-- Modal Hapus Data-->
+                    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="modalDelete" aria-hidden="true">
+                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>                    
+                                
+                                <div class="modal-body">
+                                    <div class="text-center mb-4">
+                                        <h2 class="modal-title" id="ModalLabel">Hapus Data</h2>
+                                    </div>
+                                    <div class="text-center mb-4">
+                                        <p>Anda yakin ingin menghapus data?</p>
+                                    </div>
+                                    <div class="d-flex justify-content-center">
+                                        <a type="button" href="?action=hapusData" class="btn btn-light">Ya</a>
+                                    </div>                       
+                               </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>     
