@@ -11,95 +11,63 @@ final class FuzzyTest extends TestCase{
     public $d = 27;
     public $e = 28;
 
-    public function testRendah(){
+    public function testNormal(){
         $stub = $this->createStub(Fuzzy::class);
 
-        if($this->x<=15){
+        if($this->x<=14){
             $this->nilai = 1;
-        }elseif((15<$this->x) && ($this->x<23)){
-            $this->nilai = (23-$this->x)/8;
-        }elseif($this->x>=23){
+        }else if(14<=$this->x && $this->x<=28){
+            $this->nilai = (28-$this->x)/14;
+        }else if($this->x>=28){
             $this->nilai = 0;
         }
         
-        $stub->method('rendah')
+        $stub->method('normal')
             ->willReturn($this->nilai);
     
-        $this->assertSame($this->nilai, $stub->rendah($this->x));
+        $this->assertSame($this->nilai, $stub->normal($this->x));
     }
 
-    public function testSedang(){
+    public function testAbnormal(){
         $stub = $this->createStub(Fuzzy::class);
 
-        if($this->x<=15 || $this->x>=26){
+        if($this->x<=14){
             $this->nilai = 0;
-        }elseif((15<$this->x) && ($this->x<23)){
-            $this->nilai = ($this->x-15)/8;
-        }elseif((23<$this->x) && ($this->x<26)){
-            $this->nilai = (26-$this->x)/3;
-        }elseif($this->x==23){
+        }else if(14<=$this->x && $this->x<=28){
+            $this->nilai = ($this->x-14)/14;
+        }else if($this->x>=28){
             $this->nilai = 1;
         }
         
-        $stub->method('sedang')
+        $stub->method('abnormal')
             ->willReturn($this->nilai);
     
-        $this->assertSame($this->nilai, $stub->sedang($this->x));
+        $this->assertSame($this->nilai, $stub->abnormal($this->x));
     }
 
-    public function testTinggi(){
-        $stub = $this->createStub(Fuzzy::class);
-
-        if($this->x<=23){
-            $this->nilai = 0;
-        }elseif((23<$this->x) && ($this->x<26)){
-            $this->nilai = ($this->x-23)/3;
-        }elseif($this->x>=26){
-            $this->nilai = 1;
-        }
-        
-        $stub->method('tinggi')
-            ->willReturn($this->nilai);
-    
-        $this->assertSame($this->nilai, $stub->tinggi($this->x));
-    }
-
-    public function testMax(){
+    public function testMin(){
         $stub = $this->createStub(Fuzzy::class);
         
-        if(($this->a>$this->b) && ($this->a>$this->c)){
-            $max = $this->a;
-        }elseif(($this->b>$this->a) && ($this->b>$this->c)){
-            $max = $this->b;
+        if(($this->a<$this->b) && ($this->a<$this->c) && 
+            ($this->a<$this->d) && ($this->a<$this->e)){
+            $min = $this->a;
+        }elseif(($this->b<$this->a) && ($this->b<$this->c) && 
+            ($this->b<$this->d) && ($this->b<$this->e)){
+            $min = $this->b;
+        }elseif(($this->c<$this->a) && ($this->c<$this->b) && 
+            ($this->c<$this->d) && ($this->c<$this->e)){
+            $min = $this->c;
+        }elseif(($this->d<$this->a) && ($this->d<$this->b) && 
+            ($this->d<$this->e) && ($this->d<$this->e)){
+            $min = $this->d;
         }else{
-            $max = $this->c;
+            $min = $this->e;
         }
 
-        $stub->method('max')
-            ->willReturn($max);
+        $stub->method('min')
+            ->willReturn($min);
     
-        $this->assertSame($max, $stub->max($this->a, $this->b, $this->c));
-    }
-
-    public function testMaxAkhir(){
-        $stub = $this->createStub(Fuzzy::class);
-        
-        if(($this->a>$this->b) && ($this->a>$this->c) && ($this->a>$this->d) && ($this->a>$this->e)){
-            $max = $this->a;
-        }elseif(($this->b>$this->a) && ($this->b>$this->c) && ($this->b>$this->d) && ($this->b>$this->e)){
-            $max = $this->b;
-        }elseif(($this->c>$this->a) && ($this->c>$this->b) && ($this->c>$this->d) && ($this->c>$this->e)){
-            $max = $this->c;
-        }elseif(($this->d>$this->a) && ($this->d>$this->b) && ($this->d>$this->e) && ($this->d>$this->e)){
-            $max = $this->d;
-        }else{
-            $max = $this->e;
-        }
-
-        $stub->method('maxAkhir')
-            ->willReturn($max);
-    
-        $this->assertSame($max, $stub->maxAKhir(
+        $this->assertSame($min, $stub->min(
             $this->a, $this->b, $this->c, $this->d, $this->e));
     }
 }
