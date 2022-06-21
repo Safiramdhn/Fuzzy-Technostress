@@ -213,7 +213,7 @@
             ?>
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col">Kode</th>
                         <th scope="col">Pernyataan</th>
                     </tr>
@@ -239,11 +239,6 @@
                 }
             ?>
         </div>
-        
-        <!-- footer -->
-        <footer>
-            <p>copyright chocorange 2022</p>
-        </footer>
     </div>
 
     <!-- script side-navbar -->
