@@ -53,7 +53,7 @@
               <a class="nav-link" href="dataPernyataan.php">Data Pernyataaan</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="dataKeputusan.php">Data Aturan Keputusan</a>
+              <a class="nav-link" href="dataRule.php">Data Rule Base</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="dataUser.php">Data Pengguna</a>
