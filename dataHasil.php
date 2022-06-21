@@ -43,7 +43,7 @@
         </div>
 
         <!-- Tabel data -->
-        <div class="container">
+        <div class="container text-center">
             <?php
                 if($num>=0){
             ?>
@@ -52,8 +52,13 @@
                     <tr>
                         <th scope="col">#</th>
                         <th scope="col">Email</th>
-                        <th scope="col">Kriteria</th>
                         <th scope="col">Tingkat</th>
+                        <th scope="col">Hasil Nilai</th>
+                        <th scope="col">Overload</th>
+                        <th scope="col">Invasion</th>
+                        <th scope="col">Complexity</th>
+                        <th scope="col">Uncertainty</th>
+                        <th scope="col">Insecurity</th>
                     </tr>
                 </thead>
                 
@@ -65,8 +70,13 @@
                     <tr>
                         <th scope="row"><?php echo $row['kode_hasil']; ?></th>
                         <td><?php echo $row['email']; ?></td>
-                        <td><?php echo $row['nama_kriteria']; ?></td>
                         <td><?php echo $row['tingkat']; ?></td>
+                        <td><?php echo $row['angka']; ?></td>
+                        <td><?php echo $row['overload']; ?></td>
+                        <td><?php echo $row['invasion']; ?></td>
+                        <td><?php echo $row['complexity']; ?></td>
+                        <td><?php echo $row['uncertainty']; ?></td>
+                        <td><?php echo $row['insecurity']; ?></td>
                     </tr>
                     <?php
                         }
