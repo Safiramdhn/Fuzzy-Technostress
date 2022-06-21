@@ -5,9 +5,6 @@ include_once 'lib/Session.php';
 
 class Kriteria{
     private $db_conn;
-    public $kode;
-    public $nama;
-    public $keterangan;
 
     // db connection
     public function __construct($db){
