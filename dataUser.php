@@ -50,7 +50,7 @@
             ?>
             <table class="table">
                 <thead>
-                    <tr>
+                    <tr class="text-center">
                         <th scope="col">#</th>
                         <th scope="col">Email</th>
                         <th scope="col">Nama</th>
