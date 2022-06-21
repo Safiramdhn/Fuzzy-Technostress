@@ -23,9 +23,8 @@
     include_once 'classes/Pernyataan.php';
     $pernyataan = new Pernyataan($db);
 
-    
-    include_once 'classes/Keputusan.php';
-    $keputusan = new Keputusan($db);
+    include_once 'classes/RuleBase.php';
+    $rule = new Rule($db);
 
     // calling connection
     include 'lib/Database.php';
